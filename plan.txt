@@ -12,3 +12,7 @@ ML task 1:
 We want to predict the future rating of a protoype recipe of instant ramen.
 ML task 2:
 Get better at ML
+
+Dev Ops 1:
+Deploy on a container
+
