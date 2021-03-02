@@ -1,0 +1,23 @@
+
+
+{% url 'home' as home_url %}
+{% url 'about' as about_url %}
+{% url 'ramenML' as ramenModel_url %}
+<!--https://tekshinobi.com/setting-active-navbar-link-in-django-template/-->
+<nav class='navbar navbar-expand-lg navbar-dark bg-dark'>
+    <!-- Let's design our websites 
+        like we do with docker with microservices. One html page one purpose-->
+
+    <ul class='navbar-nav'>
+        <li class='nav-item {if request.path == home_url %} active'>
+            <a class='navbar-brand' href='{{home_url}}'>Home</a>
+        </li>
+        <li class='nav-item {if request.path == about_url %} active'>
+            <a class='navbar-brand' href='{{about_url}}'>About</a>
+        </li>
+        <li class='nav-item {if request.path == about_url %} active'>
+            <a class='navbar-brand' href='{{ramenModel_url}}'>Ramen ML</a>
+        </li>
+    </ul>
+
+</nav>
