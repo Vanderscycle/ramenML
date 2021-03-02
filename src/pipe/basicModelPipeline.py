@@ -70,6 +70,7 @@ def noodleRating(djangoDict):
 # }
 # newSeries = pd.Series(newRandoData)
 # print(loaded_model.predict([newSeries]))
+#! https://stackoverflow.com/questions/988228/convert-a-string-representation-of-a-dictionary-to-a-dictionary
 test = "{'Brand':'Master Kong','Variety':'Onion Soy sauce sour kimchi prawn ramyun','Style':'cup','Country':'Japan'}"
 print(json.loads(test))
 parser = argparse.ArgumentParser(description='Please pass a dictionary')
