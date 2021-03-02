@@ -2,8 +2,8 @@
 import pandas as pd
 import numpy as np
 # data viz libraries
-import matplotlib.pyplot as plt
-import seaborn as sns
+# import matplotlib.pyplot as plt
+# import seaborn as sns
 
 #* importing libraries inside Jupyter notebook
 # # importing python files inside a jupyter notebook is tricky. 

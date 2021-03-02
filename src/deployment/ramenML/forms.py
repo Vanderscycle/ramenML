@@ -7,7 +7,7 @@ class NewRamenForm(forms.ModelForm):
         model = NewRamen
         fields = [
             'brand',
+            'ingredients',
             'style',
-            'country',
-            'ingredients'
+            'country'
         ]
