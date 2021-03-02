@@ -19,11 +19,4 @@ def about_view(request,*args, **kwargs):
     }
     return render(request,'about.html',context)
 
-def ramenModel_view(request,*args, **kwargs):
-    """
-    We want to set up the possibility to leave a message.
-    We also want them to find a copy of my CV
-    """
-    context = {        
-    }
-    return render(request,'ramenML.html',context)
+

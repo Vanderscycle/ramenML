@@ -41,8 +41,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # from github
+    'crispy_forms',
     # custom made
-    'pages'
+    'pages',
+    'ramenML'
 ]
 
 MIDDLEWARE = [
@@ -132,3 +135,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

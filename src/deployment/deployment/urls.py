@@ -18,12 +18,16 @@ from django.urls import path
 #general pages
 from pages.views import (
         home_view,
-        about_view,
-        ramenModel_view
+        about_view
     )
+# the one ML model
+from ramenML.views import (
+    ramenModel_create_view
+    )
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_view, name='home'),
     path('about/', about_view, name='about'),
-    path('ramenML/', ramenModel_view, name='ramenML')
+    path('ramenML/', ramenModel_create_view, name='ramenML')
 ]
