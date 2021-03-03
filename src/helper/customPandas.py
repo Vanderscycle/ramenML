@@ -2,8 +2,8 @@
 import pandas as pd
 import numpy as np
 # data viz libraries
-import matplotlib.pyplot as plt
-import seaborn as sns
+# import matplotlib.pyplot as plt
+# import seaborn as sns
 
 #* importing libraries inside Jupyter notebook
 # # importing python files inside a jupyter notebook is tricky. 
@@ -52,18 +52,18 @@ def correlationHeatmap(df,filterFeature=0,half=False):
     if filterFeature:
         resultFeature = correlations.index[abs(correlations[filterFeature[0]])>filterFeature[1]]
         correlations = df[resultFeature].corr()
-    fig, ax = plt.subplots(figsize=(10,10))
+    # fig, ax = plt.subplots(figsize=(10,10))
 
-    # we do not want duplicate (triangle)    
-    if half:
-        # Generate a mask for the upper triangle
-        mask = np.triu(np.ones_like(correlations, dtype=bool))
-        sns.heatmap(correlations,mask=mask, vmax=1.0,cbar=False, center=0, fmt='.2f',
-                square=True, linewidths=.5, annot=True, cbar_kws={"shrink": .70})
-    else:
-        sns.heatmap(correlations, vmax=1.0,cbar=False, center=0, fmt='.2f',
-                square=True, linewidths=.5, annot=True, cbar_kws={"shrink": .70})
-    plt.show()
+    # # we do not want duplicate (triangle)    
+    # if half:
+    #     # Generate a mask for the upper triangle
+    #     mask = np.triu(np.ones_like(correlations, dtype=bool))
+    #     sns.heatmap(correlations,mask=mask, vmax=1.0,cbar=False, center=0, fmt='.2f',
+    #             square=True, linewidths=.5, annot=True, cbar_kws={"shrink": .70})
+    # else:
+    #     sns.heatmap(correlations, vmax=1.0,cbar=False, center=0, fmt='.2f',
+    #             square=True, linewidths=.5, annot=True, cbar_kws={"shrink": .70})
+    # plt.show()
 
 #! works well now, but most likely will not fit every situation
 def pandasExploratoryData(data,desiredDtypes,uniqueValueShown=5,stringTruncatedVal=75,brief=True):
@@ -145,3 +145,36 @@ class ToDenseTransformer():
     # just return self
     def fit(self, X, y=None, **fit_params):
         return self
+from nltk.corpus import stopwords
+import string
+def nltkPreprocess(text):
+    """
+    Description:
+        - Takes a text and cleans it by removing useless punctuations and stopwords
+    input:
+        -string
+    output:
+        - list of strings
+    """
+    # lower
+    words = text.lower().split()
+    # remove punctiuation
+    table = str.maketrans('', '', string.punctuation)
+    stripped = [w.translate(table) for w in words]
+    #remove stopwords
+    stop_words = set(stopwords.words('english'))
+    clean = [w for w in stripped if not w in stop_words if len(w)>2]
+    return clean 
+
+
+def cleanVariety(col):
+    """
+    description:
+        - adaptation for 
+    """
+    cleanCol = list()
+    # print(col)
+    for v in col:
+        # print(type(v))
+        cleanCol.append(nltkPreprocess(v[0]))
+    return col

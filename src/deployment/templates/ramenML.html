@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+<!-- https://simpleisbetterthancomplex.com/tutorial/2018/08/13/how-to-use-bootstrap-4-forms-with-django.html -->
+{% block content %}
+  <form method="post" novalidate>
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit" class="btn btn-success">Test this flavor</button>
+  </form>
+  {% if results  == None %}
+  {%else%}
+  <div class="alert alert-dismissible alert-info">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong> The machine learning model predicted the rating to be:</strong> {{ results }}
+  </div>
+  {%endif%}
+{% endblock %}
