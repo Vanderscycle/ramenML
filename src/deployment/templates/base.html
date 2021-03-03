@@ -1,0 +1,19 @@
+{% load static %}
+{% block main_css%}
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title> Ramen Machine Learning Deployed App</title>
+    </head>
+    <body>
+        
+        {% include 'navbar.html' %}
+        {% block content %}
+        
+        {% endblock %}
+        
+    </body>
+    </html>
+{% endblock %}

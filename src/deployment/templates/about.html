@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+    <div class="card-header">About the author</div>
+    <div class="card-body">
+      <h4 class="card-title">{{author2}}</h4>
+      <p class="card-text"> Hello, This is the description.... it is easier to pass it as a context through pages.views about_view</p>
+      <a class="card-text" href={{ github2 }}>GitHub</a>
+    </div>
+  </div>
+  <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+    <div class="card-header">About the author</div>
+    <div class="card-body">
+      <h4 class="card-title">{{author1}}</h4>
+      <p class="card-text"> Hello, This is the description.... it is easier to pass it as a context through pages.views about_view</p>
+      <a class="card-text" href={{ github1 }}>GitHub</a>
+    </div>
+  </div>
+
+{% endblock %}
