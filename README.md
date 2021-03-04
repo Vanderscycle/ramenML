@@ -1,4 +1,4 @@
-#Ramen Machine Learning :ramen:
+# Ramen Machine Learning :ramen:
 
 Based on the data hosted by (kaggle)[https://www.kaggle.com/residentmario/ramen-ratings] which is from a popular ramen [review site](https://www.theramenrater.com/). 
 
